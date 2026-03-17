@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good Morning, Bhumii!</title>
+    <style>
+        /* Base Page Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* A soft sunrise gradient */
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            overflow: hidden; /* Keeps the animation neat */
+        }
+
+        /* The Main Container */
+        .greeting-container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            backdrop-filter: blur(5px);
+            border: 2px solid #fff;
+        }
+
+        /* ---------------------------------
+           ANIMATED CAPYBARA STYLING (CSS)
+        --------------------------------- */
+        .capybara-sprite {
+            font-size: 100px; /* Using Emoji for compatibility */
+            display: inline-block;
+            margin-bottom: 20px;
+            position: relative;
+            
+            /* The initial "arrival" animation */
+            animation: 
+                arrive 1.5s ease-out forwards,
+                gentleBounce 2s infinite ease-in-out 1.5s; /* Loop bounce after arrival */
+        }
+
+        /* The Speech Bubble */
+        .speech-bubble {
+            position: absolute;
+            top: -50px;
+            right: -80px;
+            background: #fff;
+            padding: 10px 15px;
+            border-radius: 20px;
+            border-bottom-left-radius: 2px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #5d4037;
+            opacity: 0;
+            /* Fades in slightly after the capybara arrives */
+            animation: fadeInBubble 0.5s ease-out forwards 1.2s;
+        }
+
+        /* Text Styling */
+        h1 {
+            color: #3e2723;
+            margin: 0;
+            font-size: 2.5rem;
+            animation: fadeInText 1s ease-out forwards 1.8s;
+            opacity: 0;
+        }
+
+        p {
+            color: #795548;
+            font-size: 1.1rem;
+            margin-top: 10px;
+            opacity: 0;
+            animation: fadeInText 1s ease-out forwards 2.2s;
+        }
+
+        /* ---------------------------------
+           DEFINING THE ANIMATIONS (Keyframes)
+        --------------------------------- */
+        
+        /* 1. Arrive: Slides in from the left and spins slightly */
+        @keyframes arrive {
+            0% { transform: translateX(-200px) rotate(-90deg); opacity: 0; }
+            60% { transform: translateX(20px) rotate(10deg); opacity: 1; }
+            100% { transform: translateX(0) rotate(0deg); opacity: 1; }
+        }
+
+        /* 2. Gentle Bounce: The continuous "breathing/chilling" motion */
+        @keyframes gentleBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* 3. Speech Bubble Fade-in */
+        @keyframes fadeInBubble {
+            to { opacity: 1; transform: translateY(-5px); }
+        }
+
+        /* 4. General Text Fade-in */
+        @keyframes fadeInText {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="greeting-container">
+        <div class="capybara-sprite">
+            🦫
+            <div class="speech-bubble">Hi! 🍊</div>
+        </div>
+
+        <h1>Good morning, bhumii!</h1>
+        <p>I hope you have the most relaxed and chill day possible.</p>
+    </div>
+
+</body>
+</html>
